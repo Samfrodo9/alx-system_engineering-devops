@@ -1,2 +1,2 @@
 #!/bin/bash
-ln -s /bin/sh is
+ln -s /bin/ls ._ls._
