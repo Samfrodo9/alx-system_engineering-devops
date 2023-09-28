@@ -1,0 +1,1 @@
+# An `ALX AFRICA` to learn Processes and Signals in Bash Script
