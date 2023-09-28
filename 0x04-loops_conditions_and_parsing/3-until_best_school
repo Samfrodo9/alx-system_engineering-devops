@@ -2,6 +2,6 @@
 # Printing "Best School" with a until loop
 a=0
 until [ "$a" -gt 9 ]; do
-    echo "Best School "
+    echo 'Best School'
     ((a++))
 done
