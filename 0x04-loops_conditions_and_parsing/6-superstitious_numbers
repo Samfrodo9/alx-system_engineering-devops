@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# displays 4 and then bad luck from China for the 4th loop iteration
+# displays 9 and then bad luck from Japan for the 9th loop iteration
+# displays 17 and then bad luck from Italy for the 17th loop iteration
+
+loop=1
+while [ "$loop" -lt 21 ]
+do
+	if [ "$loop" -eq 4 ]
+	then
+		echo "$loop"
+		echo "bad luck from China"
+	elif [ "$loop" -eq 9 ]
+	then
+		echo "$loop"
+		echo "bad luck from Japan"
+	elif [ "$loop" -eq 17 ]
+	then
+		echo "$loop"
+		echo "bad luck from Italy"
+	else 
+		echo "$loop"
+	fi
+	(( loop++ ))
+done
