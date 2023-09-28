@@ -9,6 +9,11 @@ while [ "$outerloop" -lt 13 ]
 do
 	innerloop=1
 	while [ "$innerloop" -lt 60 ]
+	do
 		echo "$innerloop";
-		(( innerloop ++ ))
-	
+		(( innerloop++ ))
+	done
+	echo "Hour: $outerloop"
+	(( outerloop++ ))
+
+done
