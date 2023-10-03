@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 # A bash script to help push to github
 
-#
-git add .
-git commit -m "HI";
+echo "Enter File(s) to Push"
+read files
+
+echo "Enter Commit message('No quotes')"
+
+read message
+
+git add $files 
+git commit -m "$message"
 git push
