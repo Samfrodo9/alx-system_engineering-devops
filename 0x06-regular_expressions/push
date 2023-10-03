@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# A bash script to help push to github
+
+#
+git add .
+git commit -m "HI";
