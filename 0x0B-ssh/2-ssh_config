@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# A script to configure ssh client file
+# SSH Configuration
+Host 100.26.218.239
+    IdentityFile ~/.ssh/school
+    PasswordAuthentication no
