@@ -13,7 +13,7 @@ frontend http
 backend web
 	balance roundrobin
 	server web-01 100.26.218.239:80 check
-	server web-02 54.158.205:80 check" >> /etc/haproxy/haproxy.cfg
+	server web-02 54.158.205.182:80 check" >> /etc/haproxy/haproxy.cfg
 
 sudo systemctl enable haproxy
 sudo systemctl restart haproxy
