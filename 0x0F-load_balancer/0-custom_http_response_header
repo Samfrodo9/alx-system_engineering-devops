@@ -1,0 +1,67 @@
+#!/usr/bin/env bash
+#Install nginx on your server
+
+#sudo apt-get -y update
+#sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo echo "<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to Samfrodo's Page</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<p>Hello World!</p>
+</body>
+</html>" > /var/www/html/index.html
+sudo touch /var/www/html/not_found_404.html
+sudo echo "<!DOCTYPE html>
+        <html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Page Not Found</title>
+        </head>
+        <body>
+                <p>Ceci n'est pas une page</p>
+        </body>
+</html>" > /var/www/html/not_found_404.html
+sudo echo "server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	
+
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+
+
+	server_name _;
+
+	location /redirect_me {
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
+
+	error_page 404 /not_found_404.html;
+	location = /custom_404.html {
+		root /var/www/html;
+		internal;
+	}
+
+	location / {
+	
+	# First attempt to serve request as file, then
+	# First attempt to serve request as file, then
+	try_files $uri $uri/ =404;
+
+	}
+
+	add_header X-Served-By $(hostname);
+
+}" > /etc/nginx/sites-enabled/default
+sudo service nginx restart
