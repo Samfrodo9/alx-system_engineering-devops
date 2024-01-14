@@ -1,3 +1,1 @@
-'Write a script that prints “Hello, World”, followed by a new line to the standard output'
-
-
+A repository containing all projects by ALX Africa to learn system engineering and devops
