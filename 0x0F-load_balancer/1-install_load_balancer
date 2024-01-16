@@ -12,8 +12,12 @@ frontend http
 	
 backend web
 	balance roundrobin
-	server web-01 34.229.68.181:80 check
-	server web-02 34.232.66.229:80 check" >> /etc/haproxy/haproxy.cfg
+	server web-01 54.161.252.15:80 check
+	server web-02 18.204.14.152:80 check" >> /etc/haproxy/haproxy.cfg
 
+sudo echo "
+54.161.252.15 ubuntu 93746-web-01
+18.204.14.152 ubuntu 93746-web-o2
+" >> /etc/hosts
 sudo systemctl enable haproxy
 sudo systemctl restart haproxy
